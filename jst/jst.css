@@ -1,5 +1,16 @@
+:root {
+    --fondo_rectangulo: #fff;
+    --fondo_cuandro: #fefefe;
+    --fondo_hover: #d5d5d5;
+    --color_texto: #333;
+    --color_hover: #999;
+    --fuente_texto: helvetica;
+    --fuente_size: 15px;
+    --borde_color: #d5d5d5;
+}
 
-div.selectOp {
+.selectOp {
+    display: inline-block;
     position: relative !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -7,18 +18,17 @@ div.selectOp {
     line-height: 1 !important;
     user-select: none !important;
     cursor: default !important;
-    font-family: sans-serif !important;
-    font-size: 14px !important;
-    color: #333 !important;
-    border: 1px solid #d5d5d5 !important;
+    font-family: var(--fuente_texto) !important;
+    font-size: var(--fuente_size) !important;
+    color: var(--color_texto) !important;
+    border: 1px solid var(--borde_color) !important;
     border-radius: 3px !important;
-    width: 90% !important;
+    width: 85% !important;
     height: 30px !important;
-    background-color: #fff !important;
+    background-color: var(--fondo_cuandro) !important;
 }
 
-div.selectOp::after {
-
+.selectOp::after {
     content: "▼" !important;
     position: absolute !important;
     display: inline-block !important;
@@ -26,27 +36,27 @@ div.selectOp::after {
     margin: 0 !important;
     box-sizing: border-box !important;
     line-height: 1 !important;
-    background-color: inherit !important;
-    color: #666 !important;
+    background-color: var(--fondo_cuandro) !important;
+    color: var(--color_texto) !important;
     right: 6px !important;
     top: 6px !important;
     font-size: 14px !important;
 }
 
-div.selectOp .show {
+.selectOp .show {
 
     display: block !important;
 }
 
-div.selectOp .hidden {
+.selectOp .hidden {
 
     display: none !important;
 }
 
-span.selectOP__content--visible {
+.selectOP__content--visible {
     display: inline-block !important;
-    background-color: inherit !important;
-    width: 93% !important;
+    background-color: var(--fondo_cuandro) !important;
+    width: 85% !important;
     height: 100% !important;
     padding: 0 !important;
     margin: 0 !important;
@@ -60,42 +70,50 @@ span.selectOP__content--visible {
     padding-top: 1.7% !important;
 }
 
-div.selectOP__content--hidden {
+.selectOP__content--hidden {
     position: absolute !important;
-    width: 99% !important;
+    width: 120% !important;
     height: fit-content !important;
     box-sizing: border-box !important;
     line-height: 1 !important;
-    border: 1px solid #d5d5d5 !important;
+    border: 1px solid var(--borde_color) !important;
+    background-color: var(--fondo_rectangulo) !important;
     top: 30px !important;
     left: 0 !important;
+    z-index: 999 !important;
+    padding-bottom: 5px !important;
 }
 
-div.selectOP__content--hidden span {
+.selectOP__content--hidden__height-fixe {
+    height: 300px !important;
+    overflow-y: scroll !important;
+}
+
+.selectOP__content--hidden span {
     display: block !important;
     cursor: pointer !important;
     margin: 0 !important;
     padding: 4px 6px !important;
     line-height: 1 !important;
     box-sizing: border-box !important;
-    font-family: sans-serif !important;
-    font-size: 14px !important;
-    color: #333 !important;
+    font-family: var(--fuente_texto) !important;
+    font-size: var(--fuente_size) !important;
+    color: var(--color_texto) !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
-    
 }
 
-div.selectOP__content--hidden span:hover {
-    background-color: #d5d5d5 !important;
+.selectOP__content--hidden span:hover {
+    background-color: var(--fondo_hover) !important;
+    color: var(--color_hover);
 }
 
 input.selectOP__box--filter {
     display: inline-block !important;
     width: 90% !important;
     height: 28px !important;
-    border: 1px solid #d5d5d5 !important;
+    border: 1px solid var(--borde_color) !important;
     border-radius: 10px !important;
     margin: 6px 14px !important;
     padding: 0 !important;
@@ -109,7 +127,7 @@ input.selectOP__box--filter:focus {
     border: 1px solid #999 !important;
 }
 
-div.selectOP__content--items {
+.selectOP__content--items {
     display: block !important;
     margin: 0 !important;
     padding: 0 !important;
